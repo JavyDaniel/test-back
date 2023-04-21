@@ -6,7 +6,8 @@ import com.back.testJava.enums.Incidencia;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +15,7 @@ public class TicketDTO {
 
     private Long id;
     private String titulo;
-    private Calendar fecha;
+    private Date fecha;
     //responsable
     private String equipoResponsable;
     private Incidencia incidencia;

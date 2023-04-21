@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.Date;
 
 @Entity
 @Data @NoArgsConstructor
@@ -21,7 +23,7 @@ public class Ticket {
     private String titulo;
     @Column(name = "fecha", updatable = false, nullable = false)
     @Temporal(TemporalType.DATE)
-    private Calendar fecha;
+    private Date fecha;
     // responsable
     @Column(name = "equipoResponsable")
     private String equipoResponsable;

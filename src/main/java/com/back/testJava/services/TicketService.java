@@ -8,6 +8,8 @@ public interface TicketService {
 
     public TicketDTO crearTicket(TicketDTO ticketDTO);
     public List<TicketDTO> verTickets();
-    public TicketDTO verTicketId();
+    public TicketDTO verTicketId(long id);
     public TicketDTO actualizarTicket(TicketDTO ticketDTO, long id);
+    public TicketDTO archivarTicket(boolean archivado, long id);
+    public void eliminarTicket(long id);
 }
