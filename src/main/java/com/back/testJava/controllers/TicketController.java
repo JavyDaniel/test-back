@@ -1,6 +1,7 @@
 package com.back.testJava.controllers;
 
 import com.back.testJava.dto.TicketDTO;
+import com.back.testJava.enums.Estado;
 import com.back.testJava.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,4 +54,13 @@ public class TicketController {
         return ResponseEntity.ok("Publicacion eliminada");
     }
 
+    @RequestMapping(value = "/filtro/{estado}/{archivado}", method = RequestMethod.GET)
+    public List<TicketDTO> filtroTicket(@PathVariable(name = "estado")String estado, @PathVariable(name = "archivado") boolean archivado) {
+        return ticketService.filtroTicket( Estado.valueOf(estado), archivado);
+    }
+
+    @RequestMapping(value = "/filtroArchivados/{archivado}", method = RequestMethod.GET)
+    public List<TicketDTO> filtroArchivados(@PathVariable(name = "archivado") boolean archivado) {
+        return ticketService.filtroArchivados(archivado);
+    }
 }
